@@ -24,7 +24,16 @@ class BenimUyg extends StatelessWidget {
   }
 }
 
-class YemekSayfasi extends StatelessWidget {
+class YemekSayfasi extends StatefulWidget {
+  @override
+  _YemekSayfasiState createState() => _YemekSayfasiState();
+}
+
+class _YemekSayfasiState extends State<YemekSayfasi> {
+  int corbaNo = 3;
+  int yemekNo = 1;
+  int tatliNo = 1;
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -34,31 +43,44 @@ class YemekSayfasi extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(12.0),
               child: TextButton(
-                  onPressed: () {
-                    print(
-                        "Çorba Butonu Tıklandı"); // Her tıklandığında Consola Merhaba yazsın
-                  },
-                  child: Image.asset("assets/corba_1.jpg")),
+                onPressed: () {
+                  setState(() {
+                    corbaNo++;
+                    corbaNo = corbaNo % 5 + 1;
+                  });
+                },
+                child: Image.asset("assets/corba_$corbaNo.jpg"),
+              ),
             ),
-          ), // Expanded: Ekrana sığması için kullanılır
+          ),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.all(12.0),
               child: TextButton(
-                  onPressed: () {
+                onPressed: () {
+                  setState(() {
+                    yemekNo++;
+                    yemekNo = yemekNo % 5 + 1;
                     print("Yemek Butonu Tıklandı");
-                  },
-                  child: Image.asset("assets/yemek_1.jpg")),
+                  });
+                },
+                child: Image.asset("assets/yemek_$yemekNo.jpg"),
+              ),
             ),
-          ), // flex: Ekran hangsini kaç pay alacağını ayarlar
+          ),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.all(12.0),
               child: TextButton(
-                  onPressed: () {
+                onPressed: () {
+                  setState(() {
+                    tatliNo++;
+                    tatliNo = tatliNo % 5 + 1;
                     print("Tatlı Butonu Tıklandı");
-                  },
-                  child: Image.asset("assets/tatli_1.jpg")),
+                  });
+                },
+                child: Image.asset("assets/tatli_$tatliNo.jpg"),
+              ),
             ),
           ),
         ],
