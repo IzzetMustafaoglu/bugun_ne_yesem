@@ -29,9 +29,18 @@ class YemekSayfasi extends StatelessWidget {
     return Center(
       child: Column(
         children: <Widget>[
-          Expanded(child: Image.asset("assets/corba_1.jpg")),
-          Expanded(child: Image.asset("assets/yemek_1.jpg")),
-          Expanded(child: Image.asset("assets/tatli_1.jpg"))
+          Expanded(child: Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Image.asset("assets/corba_1.jpg"),
+          )),  // Expanded: Ekrana sığması için kullanılır
+          Expanded(child: Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Image.asset("assets/yemek_1.jpg"),
+          )),  // flex: Ekran hangsini kaç pay alacağını ayarlar
+          Expanded(child: Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Image.asset("assets/tatli_1.jpg"),
+          )),  // Expanded(flex: 2,child: Image.asset("assets/yemek_1.jpg")),
         ],
       ),
     );
