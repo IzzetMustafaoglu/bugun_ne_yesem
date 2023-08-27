@@ -29,9 +29,9 @@ class YemekSayfasi extends StatelessWidget {
     return Center(
       child: Column(
         children: <Widget>[
-          Image.asset("assets/corba_1.jpg"),
-          Image.asset("assets/yemek_1.jpg"),
-          Image.asset("assets/tatli_1.jpg")
+          Expanded(child: Image.asset("assets/corba_1.jpg")),
+          Expanded(child: Image.asset("assets/yemek_1.jpg")),
+          Expanded(child: Image.asset("assets/tatli_1.jpg"))
         ],
       ),
     );
