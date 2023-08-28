@@ -35,6 +35,13 @@ class _YemekSayfasiState extends State<YemekSayfasi> {
   int yemekNo = 1;
   int tatliNo = 1;
 
+  void yemekleriYenile(){
+    setState(() {
+      corbaNo = Random().nextInt(5) + 1;
+      yemekNo = Random().nextInt(5) + 1;
+      tatliNo = Random().nextInt(5) + 1;
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -44,13 +51,7 @@ class _YemekSayfasiState extends State<YemekSayfasi> {
             child: Padding(
               padding: const EdgeInsets.all(12.0),
               child: TextButton(
-                onPressed: () {
-                  setState(() {
-                    corbaNo = Random().nextInt(5) + 1;
-                    yemekNo = Random().nextInt(5) + 1;
-                    tatliNo = Random().nextInt(5) + 1;
-                  });
-                },
+                onPressed: yemekleriYenile,
                 child: Image.asset("assets/corba_$corbaNo.jpg"),
               ),
             ),
@@ -59,14 +60,8 @@ class _YemekSayfasiState extends State<YemekSayfasi> {
             child: Padding(
               padding: const EdgeInsets.all(12.0),
               child: TextButton(
-                onPressed: () {
-                  setState(() {
-                    corbaNo = Random().nextInt(5) + 1;
-                    yemekNo = Random().nextInt(5) + 1;
-                    tatliNo = Random().nextInt(5) + 1;
-                    print("Yemek Butonu Tıklandı");
-                  });
-                },
+                onPressed: yemekleriYenile,
+
                 child: Image.asset("assets/yemek_$yemekNo.jpg"),
               ),
             ),
@@ -75,14 +70,7 @@ class _YemekSayfasiState extends State<YemekSayfasi> {
             child: Padding(
               padding: const EdgeInsets.all(12.0),
               child: TextButton(
-                onPressed: () {
-                  setState(() {
-                    corbaNo = Random().nextInt(5) + 1;
-                    yemekNo = Random().nextInt(5) + 1;
-                    tatliNo = Random().nextInt(5) + 1;
-                    print("Tatlı Butonu Tıklandı");
-                  });
-                },
+                onPressed: yemekleriYenile,
                 child: Image.asset("assets/tatli_$tatliNo.jpg"),
               ),
             ),
