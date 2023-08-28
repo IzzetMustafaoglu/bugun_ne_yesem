@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 void main() {
   runApp(BenimUyg());
@@ -45,8 +46,9 @@ class _YemekSayfasiState extends State<YemekSayfasi> {
               child: TextButton(
                 onPressed: () {
                   setState(() {
-                    corbaNo++;
-                    corbaNo = corbaNo % 5 + 1;
+                    corbaNo = Random().nextInt(5) + 1;
+                    yemekNo = Random().nextInt(5) + 1;
+                    tatliNo = Random().nextInt(5) + 1;
                   });
                 },
                 child: Image.asset("assets/corba_$corbaNo.jpg"),
@@ -59,8 +61,9 @@ class _YemekSayfasiState extends State<YemekSayfasi> {
               child: TextButton(
                 onPressed: () {
                   setState(() {
-                    yemekNo++;
-                    yemekNo = yemekNo % 5 + 1;
+                    corbaNo = Random().nextInt(5) + 1;
+                    yemekNo = Random().nextInt(5) + 1;
+                    tatliNo = Random().nextInt(5) + 1;
                     print("Yemek Butonu Tıklandı");
                   });
                 },
@@ -74,8 +77,9 @@ class _YemekSayfasiState extends State<YemekSayfasi> {
               child: TextButton(
                 onPressed: () {
                   setState(() {
-                    tatliNo++;
-                    tatliNo = tatliNo % 5 + 1;
+                    corbaNo = Random().nextInt(5) + 1;
+                    yemekNo = Random().nextInt(5) + 1;
+                    tatliNo = Random().nextInt(5) + 1;
                     print("Tatlı Butonu Tıklandı");
                   });
                 },
