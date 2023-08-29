@@ -31,9 +31,12 @@ class YemekSayfasi extends StatefulWidget {
 }
 
 class _YemekSayfasiState extends State<YemekSayfasi> {
-  int corbaNo = 3;
+  int corbaNo = 1;
   int yemekNo = 1;
   int tatliNo = 1;
+  List<String> corbaAdleri = ["Mercimek","Tarhana","Tavuksuyu","Duğun Çorbası","Yoğurtlu çorba"];
+  List<String> yemekAdleri = ["Karnıyarık","Mantı","Kuru Fasulye","İçli Köfte","Izgara Balık"];
+  List<String> tatliAdleri = ["Kadayıf","Baklava","Sütlaç","Kazandibi","Dondurma"];
 
   void yemekleriYenile(){
     setState(() {
@@ -56,6 +59,17 @@ class _YemekSayfasiState extends State<YemekSayfasi> {
               ),
             ),
           ),
+          Text(
+            corbaAdleri[corbaNo-1],
+            style: TextStyle(fontSize: 20),
+          ),
+          Container(
+            width: 200,
+            child: Divider(
+              height: 5,
+              color: Colors.black,
+            ),
+          ),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.all(12.0),
@@ -66,6 +80,16 @@ class _YemekSayfasiState extends State<YemekSayfasi> {
               ),
             ),
           ),
+          Text(
+            yemekAdleri[yemekNo - 1],
+            style: TextStyle(fontSize: 20),
+          ),
+          Container(
+            width: 200,
+            child: Divider(
+              height: 5,
+            ),
+          ),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.all(12.0),
@@ -73,6 +97,16 @@ class _YemekSayfasiState extends State<YemekSayfasi> {
                 onPressed: yemekleriYenile,
                 child: Image.asset("assets/tatli_$tatliNo.jpg"),
               ),
+            ),
+          ),
+          Text(
+            tatliAdleri[tatliNo - 1],
+            style: TextStyle(fontSize: 20),
+          ),
+          Container(
+            width: 200,
+            child: Divider(
+              height: 5,
             ),
           ),
         ],
